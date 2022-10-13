@@ -1,14 +1,15 @@
 // Global variables
 // search history as an empty array
 // weather api root url
+var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}'
 // api key
 
 // DOM element references
-// search form
-// search input
-// container/section for today's weather
+var searchFormEl=document.getElementById("")
+var searchInput=document.getElementById("")
+var currentWeather=document.getElementById("")
 // container/section for the forecast 
-// search history container
+var searchHistoryEl=document.getElementById("")
 
 
 // Function to display the search history list.
