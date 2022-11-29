@@ -1,18 +1,19 @@
 // Global variables
-// search history as an empty array
 // weather api root url
 var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}'
-// api key
+var APIkey = "a206ef8ccdfb89959a0ccdc93defdec0"
+var city = [];
 
 // DOM element references
-var searchFormEl=document.getElementById("")
-var searchInput=document.getElementById("")
-var currentWeather=document.getElementById("")
-// container/section for the forecast 
-var searchHistoryEl=document.getElementById("")
+var citySearch = document.getElementById("#searchCity");
+var searchInput = document.getElementById("#search-bar");
+var fiveDay = document.getElementById("#five-day");
+var dailyForecast = document.getElementById("currentWeather");
+var historyInput = document.getElementById("searchHistory");
+var searchSubmit = document.getElementById("#searchButton");
 
 
-// Function to display the search history list.
+// Display the search history list.
 function renderSearchHistory() {
     // empty the search history container
   
@@ -51,6 +52,7 @@ function renderSearchHistory() {
   
   }
   
+
   // Function to display a FORECAST card given an object (from our renderForecast function) from open weather api
   // daily forecast.
   function renderForecastCard(forecast) {
@@ -104,24 +106,27 @@ function renderSearchHistory() {
   
   }
   
-  function handleSearchFormSubmit(e) {
+  function handleSearchFormSubmit(event) {
     // Don't continue if there is nothing in the search form
     if (!searchInput.value) {
       return;
     }
   
-    e.preventDefault();
-    var search = searchInput.value.trim();
-    fetchCoords(search);
+    event.preventDefault();
+    var searchInput = searchInput.value.trim();
+    fetchCoords(searchInput);
     searchInput.value = '';
   }
   
-  function handleSearchHistoryClick(e) {
+  function handleSearchHistoryClick(event) {
     // grab whatever city is is they clicked
     
     fetchCoords(search);
   }
   
+  // Event listener clicks
   initSearchHistory();
   // click event to run the handleFormSubmit 
+  cityInput.addEventListener('submit', handleSearchFormSubmit);
   // click event to run the handleSearchHistoryClick
+  historyInput.addEventListener('submit', handleSearchHistoryClick);
