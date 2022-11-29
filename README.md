@@ -7,5 +7,8 @@ This application is designed to forecast varies locations for the next 5 days, t
 ## Deploy
 https://mariayconstanza.github.io/hw-6/
 
+## Screenshot
+![weather app](https://user-images.githubusercontent.com/112887914/204567541-5c899180-fc3b-4d20-a1f9-34c23ef3f012.png)
+
 ## Credit
 - https://openweathermap.org/api
